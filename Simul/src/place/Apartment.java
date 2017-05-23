@@ -10,7 +10,7 @@ public class Apartment extends Building {
 		this.name = name;
 		this.value = value;
 		value--;
-		//Trial
+		//Trialdasfadsfads
 		
 	}
 	
