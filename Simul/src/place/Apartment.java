@@ -9,7 +9,8 @@ public class Apartment extends Building {
 		super(name, value);
 		this.name = name;
 		this.value = value;
-		value++;
+		value--;
+		//Trial
 		
 	}
 	
