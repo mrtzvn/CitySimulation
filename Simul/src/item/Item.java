@@ -14,7 +14,6 @@ public abstract class Item {
 		this.name = name;
 		this.value = value;
 	}
-	
 	public void setOwner(Person newOwner){
 		this.owner = newOwner;
 	}
