@@ -60,7 +60,6 @@ public abstract class Person {
 		
 	}
 	
-	
 	public String getName() {
 		return name;
 	}
@@ -124,7 +123,7 @@ public abstract class Person {
 		this.wage -= money;
 	}
 	
-	private boolean isAffordable(double money){
+	public boolean isAffordable(double money){
 		return money <= wage;
 	}
 	
@@ -146,19 +145,27 @@ public abstract class Person {
 	public int getTalent() {
 		return talent;
 	}
+	
 	public void setTalent(int talent) {
 		this.talent = talent;
 	}
+	
 	public Building getHome() {
 		return home;
 	}
+	
 	public void setHome(Building home) {
 		this.home = home;
 	}
+	
 	public ArrayList<Person> getContactList() {
 		return contactList;
 	}
+	
 	public void setContactList(ArrayList<Person> contactList) {
 		this.contactList = contactList;
 	}
+
+	public abstract void function(Person A);
+	
 }

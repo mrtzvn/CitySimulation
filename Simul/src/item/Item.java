@@ -5,8 +5,15 @@ import person.Person;
 public abstract class Item {
 	
 	private String name;
+	
 	private double value;
+	
 	private Person owner;
+	
+	public Item(String name , double value){
+		this.name = name;
+		this.value = value;
+	}
 	
 	public void setOwner(Person newOwner){
 		this.owner = newOwner;
@@ -29,8 +36,13 @@ public abstract class Item {
 	}
 	
 	public String toString(){
-		return name + " " + value + " TL.";
+		return name ;
 	}
 	
+	public void destroy(){
+		
+		
+		
+	}
 	
 }
