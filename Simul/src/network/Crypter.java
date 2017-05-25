@@ -12,12 +12,11 @@ public class Crypter extends Program{
 	public Crypter (String name, double value, String algorithm){
 		super(name,value,"Security");
 		this.key = algorithm ;
-		}
-	public void generateKey(String key){
+		generateKey();
+	}
+	public void generateKey(){
 		generatedKey = key.length();
 	}
-	
-	
 	
 	public void cryptPack(Pack p , int bit){
 		p.setData( cryptText(p.getData() , bit));
