@@ -4,6 +4,8 @@ public class Pack {
 	
 	private String data;
 	
+	private String sourceIpAdress;
+	
 	private int size;
 	
 	public Pack(String data){
@@ -23,6 +25,8 @@ public class Pack {
 		return size;
 	}
 	
-	
+	public String getSourceIpAdress(){
+		return sourceIpAdress;
+	}
 	
 }

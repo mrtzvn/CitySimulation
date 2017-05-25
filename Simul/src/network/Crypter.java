@@ -1,9 +1,5 @@
 package network;
 
-import java.util.stream.IntStream;
-
-import item.Item;
-
 public class Crypter extends Program{
 	
 	private String key;

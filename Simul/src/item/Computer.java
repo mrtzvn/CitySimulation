@@ -1,5 +1,10 @@
 package item;
 
+import network.Pack;
+import network.Program;
+
+import java.util.ArrayList;
+
 import network.Network;
 
 public class Computer extends Item {
@@ -7,6 +12,8 @@ public class Computer extends Item {
 	private String ipAdress;
 	private double processorSpeed;
 	private Network internetConnection;
+	private ArrayList<Program> programs;
+	private ArrayList<Pack> receivedPack;
 	
 	public Computer(double processorSpeed){
 		super("Computer" ,processorSpeed * 300);
@@ -37,5 +44,20 @@ public class Computer extends Item {
 	public Network getInternetConnection(){
 		return internetConnection;
 	}
+	
+	
+	public boolean transmitPack(Pack A,Computer B){
+		if(!isConnectedInternet()){
+			System.out.println("No Internet..");
+			return false;
+		}
+		return internetConnection.transmitPack(A,B);
+	}
+	
+	public void receivePack(){
+		
+	}
+	
+	private void 
 	
 }

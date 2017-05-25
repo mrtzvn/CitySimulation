@@ -4,9 +4,17 @@ import java.util.ArrayList;
 
 import item.Computer;
 
-public class Network {
+public class Network { /*Herhangi bir bilgisayar inteneti kullanabilmek için kirasýný ödemeli.
+						* Kira kontrolü her ay baþýnda yapýlýr.
+						* Intenete baðlanma koþullarý sýrasýyla ->kira ve ->kapasitenin dolmamýþ olmasý
+ 						* Network ve Computer arasýndaki veri alýþ-veriþi Pack ' ler saysinde yapýlýyor.
+						* Bir pack ileri seviye programlar ile þifrelenip çözülebilir.
+						* Polislerin kullanacaðý veri analizi Packleri analiz etmeye dayanýr. (deCrypt edebilmeye)
+						*/
 	
 	private int capacity;
+	
+	private ArrayList<Pack> transmittedPacks;
 	
 	private ArrayList<Computer> connectedComputers;
 	
@@ -35,11 +43,12 @@ public class Network {
 		return true;
 	}
 	
-	public Pack transmitPack(Pack A){
-		
-		
-		
-		
+	public boolean transmitPack(Pack A ,Computer dest){ // this method will transmit a pack for a tunnel,
+												   // (Computer) controller -----------> (Computer) victim  
+												   // 					  via Network
+		if ( dest.getInternetConnection() != this || A == null) return false;
+		transmittedPacks.add(A);
+		return true;
 	}
 	
 	
@@ -49,6 +58,10 @@ public class Network {
 			System.out.println("This computer do not using this connection.");
 			return;
 		}
+		
+		
+		//Monitoring codes.
+		
 		
 	}
 
