@@ -1,10 +1,17 @@
 package main;
 
+import java.util.ArrayList;
+
+import network.Network;
+import person.Person;
+import place.Building;
+
 public class City {
 
-	public static void main(String[] args) {
-		
-
-	}
-
+	private ArrayList<Building> buildingList;
+	private ArrayList<Person> personList;
+	private ArrayList<Network> network;
+	
+	
+	
 }

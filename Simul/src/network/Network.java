@@ -43,12 +43,20 @@ public class Network { /*Herhangi bir bilgisayar inteneti kullanabilmek için kir
 		return true;
 	}
 	
-	public boolean transmitPack(Pack A ,Computer dest){ // this method will transmit a pack for a tunnel,
-												   // (Computer) controller -----------> (Computer) victim  
-												   // 					  via Network
+	public boolean transmitPack(Pack A ,Computer dest){ 
+		// this method will transmit a pack for a tunnel,
+		// (Computer) controller -----------> (Computer) victim  
+		// 					      via Network
 		if ( dest.getInternetConnection() != this || A == null) return false;
 		transmittedPacks.add(A);
 		return true;
+	}
+	
+	public Computer getComputer(String ipAdress){
+		for(Computer tmp : connectedComputers){
+			if(ipAdress.equals(tmp.getIpAdress())) return tmp;
+		}
+		return null;
 	}
 	
 	

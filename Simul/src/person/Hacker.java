@@ -29,7 +29,9 @@ public class Hacker extends Person {
 		personalComputer = newPC;
 	}
 	
-	
+	private void hack(){
+		personalComputer
+	}
 	
 	
 }

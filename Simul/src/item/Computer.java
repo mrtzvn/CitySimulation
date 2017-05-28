@@ -6,6 +6,7 @@ import program.Crypter;
 
 import java.util.ArrayList;
 
+import main.City;
 import network.Network;
 
 public class Computer extends Item {
@@ -23,6 +24,8 @@ public class Computer extends Item {
 	private ArrayList<Pack> receivedPacks;
 	
 	private String [] baseCommands;
+	
+	private ArrayList < String > ipAdressList;
 	
 	public Computer(double processorSpeed){
 		super("Computer" ,processorSpeed * 300);
@@ -61,6 +64,13 @@ public class Computer extends Item {
 			return false;
 		}
 		return internetConnection.transmitPack(A,B);
+	}
+	
+	public void scanIpAdress(String ipAdress){
+		
+		
+		if(internetConnection == null) return;
+		
 	}
 	
 	public boolean receivePack(Pack A){
