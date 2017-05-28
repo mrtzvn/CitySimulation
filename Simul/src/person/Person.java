@@ -65,7 +65,12 @@ public abstract class Person {
 	public String getName() {
 		return name;
 	}
-
+	
+	public double getWage(){
+		return wage;
+	}
+	
+	
 	public void setName(String name) {
 		this.name = name;
 	}

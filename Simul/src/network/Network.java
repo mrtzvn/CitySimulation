@@ -52,7 +52,10 @@ public class Network { /*Herhangi bir bilgisayar inteneti kullanabilmek için kir
 		return true;
 	}
 	
-	public Computer getComputer(String ipAdress){
+	public Computer getComputer(Computer caller,String ipAdress){
+		
+		caller.get
+		
 		for(Computer tmp : connectedComputers){
 			if(ipAdress.equals(tmp.getIpAdress())) return tmp;
 		}

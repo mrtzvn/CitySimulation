@@ -30,7 +30,7 @@ public class Hacker extends Person {
 	}
 	
 	private void hack(){
-		personalComputer
+		
 	}
 	
 	

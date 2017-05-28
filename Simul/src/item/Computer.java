@@ -1,6 +1,7 @@
 package item;
 
 import network.Pack;
+import person.Person;
 import program.Antivirus;
 import program.Crypter;
 
@@ -66,12 +67,21 @@ public class Computer extends Item {
 		return internetConnection.transmitPack(A,B);
 	}
 	
-	public void scanIpAdress(String ipAdress){
-		
+	public void attackIpAdress(String ipAdress){
 		
 		if(internetConnection == null) return;
-		
+		Computer hacked = internetConnection.getComputer(ipAdress);
+		if (hacked == null || hacked.getOwner() == null) return; 
+		Person victim = hacked.getOwner() ;
+		double earnedMoney = victim.getWage();
+		victim.giveMoney(earnedMoney);
+		getOwner().takeMoney(earnedMoney);
+		System.out.println("Attack is successful! "+ getOwner().getName() +" stole "+ earnedMoney +"TL.");
+	
 	}
+	
+	
+	
 	
 	public boolean receivePack(Pack A){
 		
