@@ -1,7 +1,8 @@
 package item;
 
 import network.Pack;
-import network.Program;
+import program.Antivirus;
+import program.Crypter;
 
 import java.util.ArrayList;
 
@@ -10,10 +11,18 @@ import network.Network;
 public class Computer extends Item {
 	
 	private String ipAdress;
+	
 	private double processorSpeed;
+	
 	private Network internetConnection;
-	private ArrayList<Program> programs;
-	private ArrayList<Pack> receivedPack;
+	
+	private Antivirus securityProgram;
+	
+	private ArrayList<Crypter> cryptoPrograms;
+	
+	private ArrayList<Pack> receivedPacks;
+	
+	private String [] baseCommands;
 	
 	public Computer(double processorSpeed){
 		super("Computer" ,processorSpeed * 300);
@@ -54,10 +63,35 @@ public class Computer extends Item {
 		return internetConnection.transmitPack(A,B);
 	}
 	
-	public void receivePack(){
+	public boolean receivePack(Pack A){
+		
+		if(A == null) return false;
+		
+		receivedPacks.add(A);
+		
+		if(securityProgram != null && securityProgram.isHarmful(A)) return false;
+		
+		if(!isReadable(A.getData())) {
+			for(Crypter tmp : cryptoPrograms )
+			if(tmp.isMathFound(A.getData(), baseCommands)) {
+				tmp.deCryptPack(A);
+				return true;
+			}
+			
+		}
+		
+		return false;
 		
 	}
 	
-	private void 
+	public boolean isReadable(String A){
+		for(String tmp : baseCommands){
+			
+			if (tmp.toLowerCase().equals(A.toLowerCase())) return true;  
+		
+		}
+		return false;
+	}
+	
 	
 }

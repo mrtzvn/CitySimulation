@@ -20,20 +20,22 @@ public abstract class Person {
 	
 	private ArrayList<Person> contactList ;
 
-	private Random curve;
+	private Random randomVar;
 	
 	public Person(String name){
 		
 		this.name = name;
 		itemsOwned = new ArrayList<Item>();
 		setContactList(new ArrayList<Person>());
-		talent = (int) (60 + 100 * curve.nextGaussian());
+		
+		talent = (int) (100 + 60 * randomVar.nextGaussian());
 	}
 	public Person (String name, Building home){
 		this.name = name;
 		this.home = home;
-		setTalent((int) (80 + 80 * curve.nextGaussian()));
+		setTalent((int) (100 + 60 * randomVar.nextGaussian()));
 	}
+	
 	public Person (String name, int age , int talent){
 		this.name = name;
 		this.age = age;
@@ -166,6 +168,6 @@ public abstract class Person {
 		this.contactList = contactList;
 	}
 
-	public abstract void function(Person A);
+	public abstract void earnMoney();
 	
 }

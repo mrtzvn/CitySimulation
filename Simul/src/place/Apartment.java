@@ -18,5 +18,8 @@ public class Apartment extends Building {
 		newBuilding.setItems(this.getItems());
 		return newBuilding;
 	}
-
+	
+	
+	
+	
 }

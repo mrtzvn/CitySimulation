@@ -1,7 +1,8 @@
 package person;
 
 public class Police extends Person {
-
+	
+	
 	public Police(String name, int age, int talent) {
 	
 		super(name, age, talent);
@@ -9,7 +10,7 @@ public class Police extends Person {
 	}
 
 	@Override
-	public void function( Person A ) { // the function of police is arresting people
+	public void earnMoney() { // the function of police is arresting people
 		 // later on , maybe tracking 
 		
 

@@ -1,4 +1,4 @@
-package network;
+package program;
 
 public abstract class Program {
 	
